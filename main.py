@@ -1,16 +1,18 @@
 # This is a sample Python script.
+import datetime as dt
+year, month, day = input().split(sep="/")
+year, month, day = int(year), int(month), int(day)
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+#print(birthday.year , dt.date.today().year)
+def age(year,month,day):
+    if month <= 12 and day <=31:
+        birthday = dt.date(year, month, day)
+        today = dt.date.today()
+        age = today.year - birthday.year
+        #age = int(age)
+        return age
+    else:
+        return 'WRONG'
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(age(year,month,day))
